@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Figma"];
+const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"];
 const works = [
   { id: 1, title: "Web Landing Page", desc: "企業向けランディングページ制作。レスポンシブ対応、アニメーション導入。" },
   { id: 2, title: "Portfolio Site", desc: "クリエイター向けポートフォリオサイト構築。モダンデザイン。" },
@@ -21,7 +21,7 @@ export default function Home() {
       {/* Header */}
       <header className="fixed w-full bg-white shadow-md z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <div className="text-2xl font-bold text-gray-900">Yuki</div>
+          <div className="text-2xl font-bold text-gray-900">Rikuya</div>
           <nav className="flex gap-4 sm:gap-6 text-gray-700 font-medium">
             <a href="#about" className="hover:text-black transition">About</a>
             <a href="#works" className="hover:text-black transition">Works</a>
@@ -65,7 +65,7 @@ export default function Home() {
             <a href="#contact">Contact Me</a>
           </Button>
           <Button className="bg-gray-100 text-gray-900 rounded-full px-6 py-3 hover:bg-gray-900 hover:text-white transition-colors border border-gray-300 shadow-md">
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://github.com/uchida0107" target="_blank">GitHub</a>
           </Button>
           <Button className="bg-indigo-100 text-indigo-800 rounded-full px-6 py-3 hover:bg-indigo-300 transition-colors border border-indigo-200 shadow-md">
             My Works
@@ -185,18 +185,18 @@ export default function Home() {
           >
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Your Name" className="rounded-lg border-gray-300 shadow-sm" />
+              <Input id="name" placeholder="山田　太郎" className="rounded-lg border-gray-300 shadow-sm" />
             </div>
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="your@mail.com" className="rounded-lg border-gray-300 shadow-sm" />
+              <Input id="email" placeholder="Email@address" className="rounded-lg border-gray-300 shadow-sm" />
             </div>
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="message">Message</Label>
-              <Input id="message" placeholder="Your message..." className="rounded-lg border-gray-300 shadow-sm h-40" />
+              <Input id="message" placeholder="お問い合わせ内容を記入してください" className="rounded-lg border-gray-300 shadow-sm h-40" />
             </div>
             <Button type="submit" className="bg-pink-600 text-white rounded-full px-4 py-2 hover:bg-pink-800 transition-colors self-start text-sm shadow-md">
-              Send Message
+              送信
             </Button>
           </motion.form>
         </div>
@@ -204,7 +204,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full text-gray-500 text-sm text-center py-8 border-t border-gray-200">
-        © 2025 Yuki Portfolio | <a href="#" className="hover:text-gray-900 transition">Twitter</a> | <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
+        © 2025 Rikuya
+ Portfolio | <a href="#" className="hover:text-gray-900 transition">Twitter</a> | <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
       </footer>
     </main>
   );
