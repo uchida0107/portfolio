@@ -127,41 +127,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Works */}
-      <section id="works" className="w-full bg-teal-50 py-32 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-teal-700 text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Works
-          </motion.h2>
+      {/* WORKS セクション */}
+<section id="works" className="w-full bg-gradient-to-b from-purple-50 to-pink-50 py-32 px-6 md:px-12">
+  <div className="max-w-6xl mx-auto text-center space-y-12">
+    <h2 className="text-4xl font-bold text-purple-700 mb-8">Works</h2>
+    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+      これまで手がけたデザインや制作物の一部を紹介します。ビジュアルだけでなく、体験としての心地よさを意識しています。
+    </p>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {works.map(work => (
-              <motion.div
-                key={work.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: work.id * 0.2 }}
-              >
-                <Card className="hover:shadow-2xl transition-shadow rounded-xl border border-gray-200">
-                  <CardContent className="p-4 flex flex-col items-center">
-                    <img src={`/works/work${work.id}.png`} alt={work.title} className="rounded-lg mb-3 w-full h-48 object-cover"/>
-                    <h3 className="font-semibold text-lg sm:text-xl text-teal-800">{work.title}</h3>
-                    <p className="text-gray-600 text-sm sm:text-base mt-2 text-center">{work.desc}</p>
-                    <Button className="mt-4 bg-teal-200 text-teal-800 rounded-full px-4 py-2 hover:bg-teal-300 transition-colors shadow-md">View Project</Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      {[
+        {
+          title: "Portfolio Site Design",
+          desc: "淡い配色と柔らかなアニメーションで印象的なポートフォリオサイト。",
+          icon: "🎨",
+          color: "from-pink-200 to-purple-200",
+        },
+        {
+          title: "Brand Visual Identity",
+          desc: "ロゴとカラーパレット設計でブランドの個性を明確化。",
+          icon: "✨",
+          color: "from-purple-200 to-blue-200",
+        },
+        {
+          title: "UI/UX Prototype",
+          desc: "ユーザー体験を最優先にしたFigmaプロトタイプ。",
+          icon: "🧩",
+          color: "from-blue-200 to-green-200",
+        },
+        {
+          title: "Landing Page Concept",
+          desc: "見やすく、伝わる。スクロールに合わせた動きのある構成。",
+          icon: "🚀",
+          color: "from-yellow-200 to-pink-200",
+        },
+        {
+          title: "Illustration Work",
+          desc: "優しい線と淡い色彩で温かみのあるイラスト表現。",
+          icon: "🌸",
+          color: "from-pink-100 to-yellow-100",
+        },
+        {
+          title: "Music & Visual Fusion",
+          desc: "サウンドとビジュアルの調和をテーマにした実験的作品。",
+          icon: "🎧",
+          color: "from-green-100 to-blue-100",
+        },
+      ].map((work, i) => (
+        <motion.div
+          key={i}
+          className={`p-8 rounded-2xl shadow-md bg-gradient-to-br ${work.color} transition-transform transform hover:-translate-y-2 hover:shadow-xl`}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+        >
+          <div className="text-5xl mb-4">{work.icon}</div>
+          <h3 className="text-2xl font-semibold text-gray-700 mb-3">{work.title}</h3>
+          <p className="text-gray-600 leading-relaxed">{work.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Contact */}
       <section id="contact" className="w-full bg-pink-50 py-32 px-6 md:px-12">
@@ -185,18 +214,18 @@ export default function Home() {
           >
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="山田　太郎" className="rounded-lg border-gray-300 shadow-sm" />
+              <Input id="name" placeholder="Your Name" className="rounded-lg border-gray-300 shadow-sm" />
             </div>
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="Email@address" className="rounded-lg border-gray-300 shadow-sm" />
+              <Input id="email" placeholder="your@mail.com" className="rounded-lg border-gray-300 shadow-sm" />
             </div>
             <div className="flex flex-col text-left w-full">
               <Label htmlFor="message">Message</Label>
-              <Input id="message" placeholder="お問い合わせ内容を記入してください" className="rounded-lg border-gray-300 shadow-sm h-40" />
+              <Input id="message" placeholder="" className="rounded-lg border-gray-300 shadow-sm h-40" />
             </div>
             <Button type="submit" className="bg-pink-600 text-white rounded-full px-4 py-2 hover:bg-pink-800 transition-colors self-start text-sm shadow-md">
-              送信
+              Send Message
             </Button>
           </motion.form>
         </div>
@@ -205,7 +234,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full text-gray-500 text-sm text-center py-8 border-t border-gray-200">
         © 2025 Rikuya
- Portfolio | <a href="#" className="hover:text-gray-900 transition">Twitter</a> | <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
+ Portfol href="#" className="hover:text-gray-900 transition">Twitter</a> | <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
       </footer>
     </main>
   );
