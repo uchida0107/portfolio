@@ -233,9 +233,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full text-gray-500 text-sm text-center py-8 border-t border-gray-200">
-        © 2025 Rikuya
- Portfol href="#" className="hover:text-gray-900 transition">Twitter</a> | <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
-      </footer>
+  © 2025 Rikuya Portfolio |
+  <a href="#" className="hover:text-gray-900 transition">Twitter</a> |
+  <a href="#" className="hover:text-gray-900 transition">LinkedIn</a>
+</footer>
     </main>
   );
 }
